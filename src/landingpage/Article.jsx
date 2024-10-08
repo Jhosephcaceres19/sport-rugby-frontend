@@ -179,7 +179,7 @@ export const Article = () => {
                 href="#"
                 className="inline-block text-2xl font-semibold sm:text-3xl"
               >
-                Equipo UMLCode: Transformando Diagramas UML en Código
+                Equipo CodeDiagrams: Transformando Diagramas UML en Código
               </a>
               <p className="text-xs ">
                 By
