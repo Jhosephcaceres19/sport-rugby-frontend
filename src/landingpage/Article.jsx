@@ -34,7 +34,7 @@ export const Article = () => {
           </div>
           <div className="flex items-center justify-center content-center p-6  h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
-              src="../../public/Business_SVG.svg"
+              src="https://res.cloudinary.com/dcyr5qkhg/image/upload/v1728416547/Business_SVG_udbtub.svg"
               alt=""
               className="object-contain h-72 sm:h-80 lg:h-[500px] xl:h-[550px] 2xl:h-[550px]"
             />
