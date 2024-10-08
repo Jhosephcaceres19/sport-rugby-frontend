@@ -47,7 +47,7 @@ export const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div className={`${!open ? "hidden" : "w-[100px] h-[150px] flex flex-col text-center  bg-teal-600"}`}>
+        <div className={`${!open ? "hidden" : "lg:hidden w-[100px] h-[150px] flex flex-col text-center  bg-teal-600"}`}>
           <button className="p-4 flex justify-end" onClick={() => setOpen(false)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ export const Navbar = () => {
               />
             </svg>
           </button>
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <Link
             to="#"
             >registrar</Link>
