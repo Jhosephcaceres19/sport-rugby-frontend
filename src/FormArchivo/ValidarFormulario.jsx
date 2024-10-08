@@ -1,58 +1,56 @@
-import {useFormil} from 'formik';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-function ValidarFormulario( {onSubmit} ) {
-
+// eslint-disable-next-line react/prop-types
+function ValidarFormulario({ onSubmit }) {
   const extenciones_validas = ['.jpg', '.pdf', '.uml'];
+
+  // Esquema de validación con Yup
+  const validationSchema = Yup.object().shape({
+    file: Yup.mixed()
+      .required('Se requiere un archivo')
+      .test('fileFormat', 'El archivo debe ser una imagen o un archivo .pdf o .uml', (value) => {
+        if (!value) return false;
+        const extencion_archivo = value.name.split('.').pop();
+        return extenciones_validas.includes(`.${extencion_archivo.toLowerCase()}`);
+      }),
+  });
 
   const formik = useFormik({
     initialValues: {
       file: null,
     },
-    validate: values =>{
-      const errors = {};
-      if(!values.file) {
-        errors.file = 'Se requiere un archivo';
-      }else {
-        const extencion_archivo = values.file.name.split('.').pop();
-        const extencion_valida = extenciones_validas.includes(`.${extencion_archivo.toLowerCase()}`);
-
-        if(!extencion_valida){
-          errors.file = 'el archivo debe ser una imagen o un archivo .pdf o .uml';
-        }
-      }
-      return errors;
-    },
-    onSubmit: values =>{
+    validationSchema, // Aplica el esquema de validación
+    onSubmit: (values) => {
       onSubmit(values.file);
     },
   });
 
-  const handleFileChange = (event)=> {
+  const handleFileChange = (event) => {
     const selectFile = event.currentTarget.files[0];
-    formik.setFielValue('file', selectFile);
+    formik.setFieldValue('file', selectFile);
   };
 
   return (
     <div>
       <input
-        type = "file"
+        type="file"
         onChange={handleFileChange}
       />
 
-      {formik.errors.file ?( 
-        <p style= {{color : 'red'}}> {formik.errors.file} </p>)
-        : null
-      }
+      {formik.errors.file ? (
+        <p style={{ color: 'red' }}>{formik.errors.file}</p>
+      ) : null}
 
       <button
         type="submit"
         onClick={formik.handleSubmit}
-        disabled = {!formik.values.file}
+        disabled={!formik.values.file}
       >
         ENVIAR
       </button>
     </div>
   );
-};
+}
 
-export default ValidarFormulario
+export default ValidarFormulario;

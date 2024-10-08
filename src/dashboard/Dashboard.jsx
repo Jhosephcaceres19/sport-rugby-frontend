@@ -1,9 +1,11 @@
 import { Navbar } from "../landingpage/Navbar";
+import Formulario from "../FormArchivo/Formulario";
 
 export const Dashboard = () => {
   return (
     <div className='bg-[#9fd5d1] flex flex-col min-h-screen'>
         <Navbar/>
+		<Formulario/>
         <div>
         <div className="h-full p-3 space-y-2 w-60  ">
 	<div className="flex items-center p-2 space-x-4">
