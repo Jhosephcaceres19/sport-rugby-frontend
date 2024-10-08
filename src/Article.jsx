@@ -6,7 +6,7 @@ export const Article = () => {
         <img
           src="https://res.cloudinary.com/dcyr5qkhg/image/upload/v1727982180/461752157_377988012075132_9023246275303271490_n_yvn1bw.jpg"
           alt=""
-          className=" h-60 sm:h-96 "
+          className=" h-60 sm:h-96 rounded-2xl"
         />
         <div className="p-6 pb-12 m-4 bg-teal-500/70 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md ">
           <div className="space-y-2">

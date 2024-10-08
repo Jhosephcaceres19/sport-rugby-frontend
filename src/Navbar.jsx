@@ -24,12 +24,12 @@ export const Navbar = () => {
         </Link>
 
         <div className="items-center  flex-shrink-0 hidden lg:flex gap-4 ">
-          <button className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 rounded-full">
-            Sign in
-          </button>
-          <button className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 font-semibold rounded-full dark:bg-violet-600">
-            Sign up
-          </button>
+          <Link className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 rounded-full">
+            Ingresar
+          </Link>
+          <Link className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 font-semibold rounded-full dark:bg-violet-600">
+            Registrar
+          </Link>
         </div>
         <button className="p-4 lg:hidden" onClick={() => setOpen(true)}>
           <svg
@@ -47,8 +47,8 @@ export const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div className={`${!open ? "hidden" : "lg:hidden w-[100px] h-[150px] flex flex-col text-center  bg-teal-600"}`}>
-          <button className="p-4 flex justify-end" onClick={() => setOpen(false)}>
+        <div className={`${!open ? "hidden" : "lg:hidden w-[100px] right-5 fixed h-[180px] flex flex-col text-center  bg-cyan-400 rounded-lg "}`}>
+          <button className=" mt-4 mr-2 flex justify-end" onClick={() => setOpen(false)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -64,13 +64,15 @@ export const Navbar = () => {
               />
             </svg>
           </button>
-          <div className="flex flex-col ">
+          <div className="flex flex-col items-center justify-center h-screen gap-4">
             <Link
             to="#"
-            >registrar</Link>
+            className="hover:bg-emerald-400 w-full py-2"
+            >Registrar</Link>
             <Link
             to="#"
-            >ingresar</Link>
+            className="hover:bg-emerald-400 w-full py-2"
+            >Ingresar</Link>
           </div>
         </div>
       </div>
