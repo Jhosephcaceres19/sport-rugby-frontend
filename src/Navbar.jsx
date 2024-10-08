@@ -8,7 +8,7 @@ export const Navbar = () => {
       <div className="container flex justify-between h-16 mx-auto">
         <Link
           rel="noopener noreferrer"
-          href="/"
+          to="/"
           aria-label="Back to homepage"
           className="flex items-center p-2"
         >
@@ -24,7 +24,7 @@ export const Navbar = () => {
         </Link>
 
         <div className="items-center  flex-shrink-0 hidden lg:flex gap-4 ">
-          <Link className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 rounded-full">
+          <Link to="/dashboard" className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 rounded-full">
             Ingresar
           </Link>
           <Link className="self-center bg-cyan-600 hover:bg-emerald-400 px-8 py-3 font-semibold rounded-full">
@@ -66,11 +66,11 @@ export const Navbar = () => {
           </button>
           <div className="flex flex-col items-center justify-center h-screen gap-4">
             <Link
-            to="#"
+            
             className="hover:bg-emerald-400 w-full py-2"
             >Registrar</Link>
             <Link
-            to="#"
+            to="/dashboard"
             className="hover:bg-emerald-400 w-full py-2"
             >Ingresar</Link>
           </div>
