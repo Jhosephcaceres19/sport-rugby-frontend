@@ -1,4 +1,4 @@
-import { Navbar } from "../Navbar";
+import { Navbar } from "../landingpage/Navbar";
 
 export const Dashboard = () => {
   return (

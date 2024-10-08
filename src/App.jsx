@@ -1,6 +1,6 @@
-import { Article } from "./Article";
-import { Footer } from "./Footer";
-import { Navbar } from "./Navbar";
+import { Article } from "./landingpage/Article";
+import { Footer } from "./landingpage/Footer";
+import { Navbar } from "./landingpage/Navbar";
 
 // App.js
 export const App = () => {
