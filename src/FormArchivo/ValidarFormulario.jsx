@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 function ValidarFormulario( {onSubmit} ) {
 
-  const extenciones_validas = ['.jpg', '.pdf', '.uml'];
+  const extenciones_validas = ['.jpg', '.pdf', '.mdj'];
 
   const formik = useFormik({
     initialValues: {
