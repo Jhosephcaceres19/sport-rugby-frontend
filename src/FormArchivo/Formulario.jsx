@@ -1,9 +1,17 @@
 
+import ValidarArchivo from './ValidarFormulario';
 
-function Formulario() {
-  return (
-    <div>Formulario</div>
-  )
-}
+const FormularioPrueba = () => {
+    const handleFileSubmission = (file) => {
+        console.log('Archivo válido:', file);
+        // enviarlo a un servidor
+    };
 
-export default Formulario
+    return (
+        <form onSubmit={(e) => e.preventDefault()}>
+            <ValidarArchivo onSubmit={handleFileSubmission} />
+        </form>
+    );
+};
+
+export default FormularioPrueba;
