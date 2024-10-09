@@ -1,9 +1,19 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-function ValidarFormulario( {onSubmit} ) {
-
+function ValidarFormulario({ onSubmit }) {
   const extenciones_validas = ['.jpg', '.pdf', '.mdj'];
+
+  // Definir el esquema de validación
+  const validationSchema = Yup.object({
+    file: Yup.mixed()
+      .required('Se requiere un archivo')
+      .test(
+        'fileFormat',
+        'Formato no soportado',
+        value => value && extenciones_validas.includes(value.name.slice(-4))
+      ),
+  });
 
   const formik = useFormik({
     initialValues: {

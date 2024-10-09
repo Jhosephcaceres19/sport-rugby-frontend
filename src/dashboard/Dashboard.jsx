@@ -1,3 +1,4 @@
+import Formulario from "../FormArchivo/Formulario";
 import { Navbar } from "../landingpage/Navbar";
 import { Sidebar } from "./Sidebar";
 
@@ -8,6 +9,7 @@ export const Dashboard = () => {
       <div className="flex flex-grow">
         <Sidebar />
         <div className="flex flex-grow justify-center mt-40  ">
+          <Formulario />
         </div>
       </div>
     </div>
